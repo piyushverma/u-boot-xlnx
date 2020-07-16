@@ -304,6 +304,9 @@
 		"tftpboot 0x100000 ${boot_image} && " \
 		"zynqrsa 0x100000 && " \
 		"bootm ${kernel_load_address} ${ramdisk_load_address} ${devicetree_load_address}\0" \
+	"bootargs=root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait\0" \
+	"sdboot1=load mmc 0 0x10000000 image.ub; bootm 0x10000000\0"	\
+	"bootcmd=run sdboot1\0"		\
 		DFU_ALT_INFO
 #endif
 
