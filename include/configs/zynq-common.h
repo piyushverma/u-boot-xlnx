@@ -305,7 +305,7 @@
 		"zynqrsa 0x100000 && " \
 		"bootm ${kernel_load_address} ${ramdisk_load_address} ${devicetree_load_address}\0" \
 	"bootargs=root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait\0" \
-	"fitorsd=if imi 0x10000000; then echo "Booting Fitimage"; run runboot; else run sdboot1; fi;\0" \
+	"fitorsd=if imi 0x10000000; then echo Booting Fitimage; run runboot; else run sdboot1; fi;\0" \
 	"sdboot1=load mmc 0 0x10000000 image.ub; run runboot\0"	\
 	"runboot=mw 43c00050 22; bootm 0x10000000\0" \
 	"bootcmd=run fitorsd\0"		\
